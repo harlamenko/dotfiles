@@ -1,0 +1,10 @@
+{
+  "ChangeDetectorRef": {
+    "scope": "typescript",
+    "prefix": "cdr",
+    "description": "Add ChangeDetectorRef injection",
+    "body": [
+      "private readonly cdr: ChangeDetectorRef,"
+    ]
+  }
+}

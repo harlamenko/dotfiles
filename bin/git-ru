@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+git reset --hard @{u}
+# git clean -df
+# git pull

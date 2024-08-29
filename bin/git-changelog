@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+git lcf | awk -F' ' '!seen[$1]++' | sed 's/ - .*$//g' | sed 's/\(NLMA-\S*\)/[\1](https:\/\/youtrack.a1s.tech\/issue\/\1\)/' | xclip -sel clip
+echo 'Text copied!'

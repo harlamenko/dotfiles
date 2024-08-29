@@ -1,0 +1,133 @@
+[include]
+    path = .git-sensitive
+
+[alias]
+	ss = status -s
+	p = pull
+	P = push
+
+	c = commit
+	ca = commit -a
+	cm = commit -m
+	can = commit --amend --no-edit
+	f = commit --fixup
+	fa = commit -a --fixup
+
+	rl = commit --amend --no-edit --reset-author --no-verify # reset-last
+  ru = "!git-ru"
+
+	s = switch
+	sm = switch master
+	sd = switch develop
+	c- = checkout -
+
+	b = branch -v
+	dmb = "!git-dmb"
+
+	m = merge
+	md = merge develop --log
+  mr = "!git-mr"
+	rb = rebase
+	rbi = rebase -i
+	rbc = rebase --continue
+	rba = rebase --abort
+
+  l  = "log --pretty=li --date=format:'%d.%m.%y %H:%M' --graph"
+  lf = "log --pretty=lf --date=format:'%d.%m.%y %H:%M' --graph"
+  la = "log --pretty=li --date=format:'%d.%m.%y %H:%M' --graph --all"
+ 
+  # full changelog
+  lcf = "!f() { git log --format=format:'%s' --grep=^NLMA- \"$(git describe --tags --abbrev=0)..HEAD\"; }; f"
+  # changelog uniq
+  lc = "!git-changelog"
+
+	mt = mergetool --no-prompt
+
+	cp = cherry-pick
+
+[init]
+	defaultBranch = master
+
+[core]
+	autocrlf = false
+	editor = nvim -f
+  pager = delta --dark --paging=never --line-numbers
+
+[delta]
+  side-by-side = true
+  navigate = true
+  syntax-theme = kanagawa
+
+[diff]
+  tool = nvimdiff
+  colorMoved = zebra
+  colorMovedWS = allow-indentation-change
+  context = 10
+
+[merge]
+  conflictStyle = zdiff3
+  tool = vim_mergetool
+
+[mergetool]
+  hideResolved = true
+	prompt = false
+	keepBackup = false
+
+[mergetool "diffconflicts"]
+	cmd = nvim -c DiffConflictsWithHistory "$MERGED" "$BASE" "$LOCAL" "$REMOTE"
+[mergetool "vim_mergetool"]
+  trustExitCode = true
+  cmd = nvim -c MergetoolStart "$MERGED" "$BASE" "$LOCAL" "$REMOTE"
+
+[rebase]
+	autoSquash = true
+	abbreviateCommands = false
+	missingCommitsCheck = error
+	autostash = true
+	updateRefs = true
+
+[rerere]
+	enabled = true
+	autoUpdate = true
+
+[format]
+  pretty = lf
+
+[pretty]
+  li = "format:%C(bold green)%h%C(reset) %C(auto)%s%d%C(reset) %C(#454444)%<(10,trunc)%an %<(13)%ar%ad%C(reset)"
+	lt = format:%C(auto)%h%C(reset) %C(white)-%C(reset) %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(white)⤷%C(reset) %s %C(241)- %aN <%aE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
+	lf = format:%C(auto)%h%C(reset)%C(auto)%d%C(reset)   %C(239)[P: %p] [T: %t]%C(reset)%n%C(244)Author:   %aN <%aE>%C(reset) %C(239)%ad (%ar)%C(reset)%n%C(244)Commit:   %cN <%cE>%C(reset) %C(239)%cd (%cr)%C(reset) %C(italic 239)[GPG: %G?% GK]%C(reset)%w(0,4,4)%n%C(bold 77)%s%C(reset)%n%n%-b%n%n%-N%n
+
+[grep]
+	patternType = perl
+
+[pull]
+	rebase = true
+
+[gui]
+	pruneduringfetch = true
+
+[smartgit "submodule"]
+	fetchalways = false
+	update = true
+	initializenew = true
+
+[push]
+	recurseSubmodules = check
+	default = current
+
+[branch]
+	sort = -committerdate
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[credential]
+	helper = store
+
+[gpg]
+	program = gpg2
+

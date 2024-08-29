@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+git sd
+git branch --list 'm/*' | pee 'xargs git branch -d' "sed 's/\s*m\///' | xargs git push origin -d"

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+git s "$1"           # switch to branch
+git rb develop       # rebase on develop
+git sd               # switch to develop
+git m @{-1}          # merge previous branch
+git b -m "$1" "m/$1" # add m/ prefix to merged branch to mark as deletable

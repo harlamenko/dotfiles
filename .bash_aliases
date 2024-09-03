@@ -23,3 +23,4 @@ alias config='/usr/bin/git --git-dir=$HOME/dev/gh/.cfg/ --work-tree=$HOME'
 alias vim='nvim'
 alias v='nvim'
 alias g='git'
+alias chrome="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"

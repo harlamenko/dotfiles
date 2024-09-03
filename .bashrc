@@ -99,6 +99,7 @@ ssh-add ~/.ssh/personal_key
 
 export GPG_TTY=$(tty)
 export PATH="$HOME/bin:$PATH"
+export CHROME_BIN="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 
 # need to be on the end
 eval "$(zoxide init bash)"

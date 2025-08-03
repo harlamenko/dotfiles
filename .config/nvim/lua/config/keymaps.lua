@@ -5,7 +5,7 @@ local wk = require("which-key")
 local map = vim.keymap.set
 local del = vim.keymap.del
 -- local opts = { noremap = true, silent = true }
-
+--
 -- Duplicate
 map("n", "<leader>d", '"tY"tp', { desc = "Duplicate line below" })
 map("v", "<leader>d", '"ty`>"tp', { desc = "Duplicate selection" })

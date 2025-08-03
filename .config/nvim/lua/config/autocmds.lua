@@ -13,5 +13,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "typescript", "javascript" },
   callback = function()
     vim.cmd("iabbr log console.log()<Left>")
+    vim.cmd("iabbr c const")
+    vim.cmd("iabbr e export")
   end,
 })

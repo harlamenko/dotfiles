@@ -2,13 +2,13 @@ return {
   "echasnovski/mini.surround",
   opts = {
     mappings = {
-      add = "gsa",
-      delete = "gsd",
-      find = "gsf",
-      find_left = "gsF",
-      highlight = "gsh",
-      replace = "gsr",
-      update_n_lines = "gsn",
+      add = ";;",
+      delete = ";d",
+      find = ";f",
+      find_left = ";F",
+      highlight = ";h",
+      replace = ";r",
+      update_n_lines = ";n",
     },
   },
   init = function()
@@ -57,6 +57,12 @@ return {
         ["a"] = {
           input = { "%(().-()%)" },
           output = { left = "(", right = " as any)" },
+        },
+      },
+      htmlangular = {
+        ["a"] = {
+          input = { "%(().-()%)" },
+          output = { left = "$any(", right = ")" },
         },
       },
     }

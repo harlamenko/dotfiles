@@ -74,6 +74,9 @@ esac
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
+if [ -f ~/.bash_sensitive ]; then
+  . ~/.bash_sensitive
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -101,5 +104,12 @@ export GPG_TTY=$(tty)
 export PATH="$HOME/bin:$PATH"
 export CHROME_BIN="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 
+export OPENAI_BASE_URL="https://openrouter.ai/api/v1"
+export OPENAI_MODEL="qwen/qwen3-coder:free"
+
 # need to be on the end
 eval "$(zoxide init bash)"
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+. "$HOME/.cargo/env"

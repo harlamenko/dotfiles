@@ -46,7 +46,7 @@
 	cp = cherry-pick
 
 [init]
-	defaultBranch = master
+	defaultBranch = main
 
 [core]
 	autocrlf = false

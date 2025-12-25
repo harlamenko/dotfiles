@@ -1,5 +1,10 @@
 return {
   "akinsho/bufferline.nvim",
+  opts = {
+    options = {
+      middle_mouse_command = "bdelete! %d",
+    },
+  },
   -- stylua: ignore
   keys = {
     { "L",  function() vim.cmd("bnext " .. vim.v.count1) end, desc = "Next buffer"     },

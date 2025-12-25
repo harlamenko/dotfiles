@@ -41,6 +41,8 @@ wk.add({
   { "<leader>ma", "<Plug>(VM-Select-All)<Tab>", desc = "Select All" },
 })
 
+-- copy/paste
+map({ "v" }, "P", '"0p', { desc = "Paste last yanked text" })
 wk.add({ { "gp", "`[v`]", desc = "Select pasted text", mode = { "n", "v" } } })
 
 -- Keys for diff resolution

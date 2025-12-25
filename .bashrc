@@ -97,8 +97,8 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-eval $(ssh-agent)
-ssh-add ~/.ssh/personal_key
+# eval $(ssh-agent)
+# ssh-add ~/.ssh/personal_key
 
 export GPG_TTY=$(tty)
 export PATH="$HOME/bin:$PATH"
@@ -110,6 +110,4 @@ export OPENAI_MODEL="qwen/qwen3-coder:free"
 # need to be on the end
 eval "$(zoxide init bash)"
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
 . "$HOME/.cargo/env"

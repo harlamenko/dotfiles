@@ -21,7 +21,17 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias config='/usr/bin/git --git-dir=$HOME/dev/gh/.cfg/ --work-tree=$HOME'
 alias c=config
+alias g='git'
+alias t='tmux'
+alias chrome="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
+
 alias vim='nvim'
 alias v='nvim'
-alias g='git'
-alias chrome="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
+alias vc='cd $HOME/.config/nvim && vim'
+
+# Obsidian
+alias oo='cd $HOME/docs/obsidian'
+alias on='function _on(){ v "$HOME/docs/obsidian/$1.md"; }; _on'
+
+# tmux
+alias tf="~/eb.sh"

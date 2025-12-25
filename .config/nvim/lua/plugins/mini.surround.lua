@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.surround",
+  "nvim-mini/mini.surround",
   opts = {
     mappings = {
       add = ";;",
@@ -52,17 +52,29 @@ return {
           input = { "%(().-()%)" },
           output = { left = "(", right = " as any)" },
         },
+        ["c"] = {
+          input = { "%(().-()%)" },
+          output = { left = "/*", right = "*/" },
+        },
       },
       typescriptreact = {
         ["a"] = {
           input = { "%(().-()%)" },
           output = { left = "(", right = " as any)" },
         },
+        ["c"] = {
+          input = { "%(().-()%)" },
+          output = { left = "/*", right = "*/" },
+        },
       },
       htmlangular = {
         ["a"] = {
           input = { "%(().-()%)" },
           output = { left = "$any(", right = ")" },
+        },
+        ["c"] = {
+          input = { "%(().-()%)" },
+          output = { left = "<!--", right = "-->" },
         },
       },
     }

@@ -3,12 +3,21 @@ local function switch()
     local fileName = vim.fn.expand("%")
     local filePathNoExt = vim.fn.expand("%:p:r")
 
-    if fileName:match(".component.html") then
-      vim.cmd("e " .. filePathNoExt .. ".scss")
-    elseif fileName:match(".component.scss") then
-      vim.cmd("e " .. filePathNoExt .. ".ts")
-    elseif fileName:match(".component.ts") then
-      vim.cmd("e " .. filePathNoExt .. ".html")
+    if fileName:match(".html") then
+      local scssFile = filePathNoExt .. ".scss"
+      if vim.fn.filereadable(scssFile) == 1 then
+        vim.cmd("e " .. scssFile)
+      end
+    elseif fileName:match(".scss") then
+      local tsFile = filePathNoExt .. ".ts"
+      if vim.fn.filereadable(tsFile) == 1 then
+        vim.cmd("e " .. tsFile)
+      end
+    elseif fileName:match(".ts") then
+      local htmlFile = filePathNoExt .. ".html"
+      if vim.fn.filereadable(htmlFile) == 1 then
+        vim.cmd("e " .. htmlFile)
+      end
     end
   end
 end
@@ -20,17 +29,6 @@ vim.api.nvim_create_autocmd({ "UIEnter" }, {
     -- Angular binds
     if is_angular then
       vim.keymap.set("n", "<A-s>", switch())
-
-      -- goto CSS/style files
-      -- vim.keymap.set("n", "<leader>js", find(".+css|.+scss|.+sass", { regex = true, prefix = "full" }), opts)
-      -- vim.keymap.set("n", "<leader>jt", find(".component.html"), opts) -- goto html
-      -- vim.keymap.set("n", "<leader>jc", find(".component.ts"), opts) -- goto script
-      --
-      -- -- goto test files
-      -- vim.keymap.set("n", "<leader>gtt", find(".+spec", { regex = true, prefix = "full" }), opts)
-      --
-      -- vim.keymap.set("n", "<leader>gtm", find(".module.ts"), opts) -- goto module
-      -- vim.keymap.set("n", "<leader>gtv", find(".service.ts"), opts) -- goto serVice
     end
   end,
 })

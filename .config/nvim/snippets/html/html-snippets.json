@@ -1,0 +1,26 @@
+{
+  "Statefull structure": {
+    "scope": "html",
+    "prefix": "m",
+    "description": "Basic statefull structure",
+    "body": [
+      "@if (model\\$ | async; as model) {",
+      "    <app-layout>",
+      "        @if (model.state !== 'error') {",
+      "            <div class=\"evo-page evo-container\">",
+      "                @if (model.state === 'ready') {}",
+      "                @if (model.state === 'pending') {",
+      "                    <div class=\"loader-wrapper\">",
+      "                        <evo-circular-loader />",
+      "                    </div>",
+      "                }",
+      "            </div>",
+      "        }",
+      "        @if (model.state === 'error') {",
+      "            <app-replacement-message [model]=\"model\" />",
+      "        }",
+      "    </app-layout>",
+      "}"
+    ]
+  }
+}

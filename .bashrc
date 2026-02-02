@@ -71,12 +71,8 @@ xterm* | rxvt*)
 *) ;;
 esac
 
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
-if [ -f ~/.bash_sensitive ]; then
-  . ~/.bash_sensitive
-fi
+[ -f ~/.dotfiles/.aliases ] && source ~/.dotfiles/.aliases
+[ -f ~/.dotfiles/.sensitive ] && source ~/.dotfiles/.sensitive
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -95,7 +91,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval "$(fzf --bash)"
 
 # eval $(ssh-agent)
 # ssh-add ~/.ssh/personal_key

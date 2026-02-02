@@ -28,11 +28,7 @@ map({ "n", "v" }, "<cr>", ":wa<cr>", { desc = "Save all" })
 
 map({ "n", "v" }, "<leader>R", "<cmd>LspRestart<cr>", { desc = "Restart LSP" })
 
-map({ "n", "v" }, "<A-o>", LazyVim.lsp.action["source.organizeImports"], { desc = "Organize Imports" })
-
-map({ "n", "v" }, "<A-p>", function()
-  LazyVim.format({ force = true })
-end, { desc = "Format" })
+map({ "n", "v" }, "<leader>o", LazyVim.lsp.action["source.organizeImports"], { desc = "Organize Imports" })
 
 wk.add({
   { "<leader>m", group = "Visual Multi", mode = { "n", "v" } },

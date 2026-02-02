@@ -111,3 +111,6 @@ export OPENAI_MODEL="qwen/qwen3-coder:free"
 eval "$(zoxide init bash)"
 
 . "$HOME/.cargo/env"
+
+# opencode
+export PATH=/home/hav/.opencode/bin:$PATH

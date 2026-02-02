@@ -1,6 +1,7 @@
 # Config relating to the Lazygit UI https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+
 gui:
-  language: 'en'
+  language: "en"
   timeFormat: 02.01.06
   shortTimeFormat: 15:04
   commitAuthorLongLength: 10
@@ -8,8 +9,8 @@ gui:
   sidePanelWidth: 0.20
   # enlargedSideViewLocation: 'top'
 git:
-  paging:
-    colorArg: always
-    useConfig: true
+  pagers:
+    - colorArg: always
   branchLogCmd: "git lf --color=always {{branchName}} --"
-  allBranchesLogCmd: "git la --color=always"
+  allBranchesLogCmds:
+    - git la --color=always

@@ -19,27 +19,30 @@ return {
             },
           },
         },
+        ["*"] = {
+          keys = {
+            {
+              "<leader>ca",
+              function()
+                vim.lsp.buf.code_action({ context = { only = { "quickfix", "source" } } })
+              end,
+              expr = true,
+              desc = "[C]ode [A]ction",
+              has = "codeAction",
+            },
+            {
+              "<leader>cR",
+              function()
+                local inc_rename = require("inc_rename")
+                return ":" .. inc_rename.config.cmd_name .. " "
+              end,
+              expr = true,
+              desc = "Rename completely (inc-rename.nvim)",
+              has = "rename",
+            },
+          },
+        },
       },
     },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = function()
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-
-      -- combine all code actions to one keymap
-      keys[#keys + 1] = {
-        "<leader>ca",
-        function()
-          vim.lsp.buf.code_action({ context = { only = { "quickfix", "source" } } })
-        end,
-        expr = true,
-        desc = "[C]ode [A]ction",
-        has = "codeAction",
-      }
-
-      -- remove lsp info keymap
-      keys[#keys + 1] = { "<leader>cl", false }
-    end,
   },
 }

@@ -28,14 +28,8 @@ map({ "n", "v" }, "<cr>", ":wa<cr>", { desc = "Save all" })
 
 map({ "n", "v" }, "<leader>R", "<cmd>LspRestart<cr>", { desc = "Restart LSP" })
 
-map({ "n", "v" }, "<leader>o", LazyVim.lsp.action["source.organizeImports"], { desc = "Organize Imports" })
-
-wk.add({
-  { "<leader>m", group = "Visual Multi", mode = { "n", "v" } },
-  { "<leader>mr", "<Plug>(VM-Start-Regex-Search)", desc = "Start Regex Search" },
-  { "<leader>ma", "<Plug>(VM-Visual-All)<Tab>", desc = "Select All", mode = "v" },
-  { "<leader>ma", "<Plug>(VM-Select-All)<Tab>", desc = "Select All" },
-})
+map({ "n" }, "<leader>o", LazyVim.lsp.action["source.organizeImports"], { desc = "Organize imports" })
+map({ "n" }, "<leader>i", LazyVim.lsp.action["source.addMissingImports"], { desc = "Add all missing imports" })
 
 -- copy/paste
 map({ "v" }, "P", '"0p', { desc = "Paste last yanked text" })

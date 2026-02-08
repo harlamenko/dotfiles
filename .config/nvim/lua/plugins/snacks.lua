@@ -1,18 +1,29 @@
 return {
-  "folke/snacks.nvim",
-  opts = {
-    picker = {
-      layout = { fullscreen = true },
-      sources = {
-        explorer = {
-          layout = { fullscreen = false },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      picker = {
+        layout = { fullscreen = true },
+        sources = {
+          explorer = {
+            layout = { fullscreen = false },
+            actions = {
+              ng_generate = function(picker, item)
+                require("ng-generate").run_snacks(picker, item)
+              end,
+            },
+            win = {
+              list = {
+                keys = {
+                  ["n"] = "ng_generate",
+                },
+              },
+            },
+          },
         },
       },
-    },
-    styles = {
-      lazygit = {
-        width = 0,
-        height = 0,
+      styles = {
+        lazygit = { width = 0, height = 0 },
       },
     },
   },

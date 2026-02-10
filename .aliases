@@ -23,6 +23,7 @@ alias config='/usr/bin/git --git-dir=$HOME/dev/gh/.cfg/ --work-tree=$HOME'
 alias c=config
 alias g='git'
 alias t='tmux'
+alias z=zoxide
 alias chrome="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 
 alias vim='nvim'

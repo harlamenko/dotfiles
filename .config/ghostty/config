@@ -1,0 +1,47 @@
+# vi:ft=conf
+#
+# https://ghostty.org/docs/config/reference
+
+auto-update-channel = tip
+window-decoration = true
+window-save-state = always
+window-padding-balance = true
+confirm-close-surface = false
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+shell-integration = zsh
+shell-integration-features = no-cursor,title
+copy-on-select = clipboard
+cursor-style = block
+cursor-style-blink = true
+mouse-hide-while-typing = true
+clipboard-read = "allow"
+clipboard-paste-protection = false
+window-inherit-working-directory=true
+unfocused-split-opacity = 0.75
+
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 10
+
+theme = Kanagawabones
+
+keybind = ctrl+space>r=reload_config
+# navigate between splits (vim-style)
+# super+h requires remapping "Hide Ghostty" in macOS keyboard settings
+keybind = performable:ctrl+h=goto_split:left
+keybind = performable:ctrl+j=goto_split:bottom
+keybind = performable:ctrl+k=goto_split:top
+keybind = performable:ctrl+l=goto_split:right
+
+# resize splits
+keybind = ctrl+right=resize_split:right,50
+keybind = ctrl+down=resize_split:down,50
+keybind = ctrl+left=resize_split:left,50
+keybind = ctrl+up=resize_split:up,50
+
+# New split commands
+keybind = ctrl+space>-=new_split:down
+keybind = ctrl+space>shift+\=new_split:right
+keybind = ctrl+space>w>d=close_surface
+
+

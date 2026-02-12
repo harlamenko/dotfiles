@@ -25,13 +25,13 @@ font-size = 10
 
 theme = Kanagawabones
 
-keybind = ctrl+space>r=reload_config
+
 # navigate between splits (vim-style)
 # super+h requires remapping "Hide Ghostty" in macOS keyboard settings
-keybind = performable:ctrl+h=goto_split:left
-keybind = performable:ctrl+j=goto_split:bottom
-keybind = performable:ctrl+k=goto_split:top
-keybind = performable:ctrl+l=goto_split:right
+# keybind = performable:ctrl+h=goto_split:left
+# keybind = performable:ctrl+j=goto_split:bottom
+# keybind = performable:ctrl+k=goto_split:top
+# keybind = performable:ctrl+l=goto_split:right
 
 # resize splits
 keybind = ctrl+right=resize_split:right,50
@@ -40,8 +40,11 @@ keybind = ctrl+left=resize_split:left,50
 keybind = ctrl+up=resize_split:up,50
 
 # New split commands
+unbind  = ctrl+shift+e
 keybind = ctrl+space>-=new_split:down
+unbind  = ctrl+shift+o
 keybind = ctrl+space>shift+\=new_split:right
+unbind  = ctrl+shift+o
 keybind = ctrl+space>w>d=close_surface
 
 

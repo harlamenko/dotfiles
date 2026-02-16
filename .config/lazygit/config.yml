@@ -7,11 +7,10 @@ gui:
   commitAuthorLongLength: 10
   statusPanelView: allBranchesLog
   sidePanelWidth: 0.20
-  # enlargedSideViewLocation: 'top'
 git:
   pagers:
-    - pager: delta --dark --paging=never --line-numbers
-    - colorArg: always
+    - pager: delta --dark --paging=never
+    - useExternalDiffGitConfig: false
   branchLogCmd: "git lf --color=always {{branchName}} --"
   allBranchesLogCmds:
     - git la --color=always

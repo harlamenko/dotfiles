@@ -6,6 +6,8 @@ return {
         layout = { fullscreen = true },
         sources = {
           explorer = {
+            hidden = true,
+            ignored = true,
             layout = { fullscreen = false },
             actions = {
               ng_generate = function(picker, item)

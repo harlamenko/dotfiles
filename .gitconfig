@@ -51,22 +51,31 @@
 [core]
 	autocrlf = false
 	editor = nvim -f
-  pager = delta --dark --paging=never --line-numbers
+  pager = delta
 
 [delta]
-  side-by-side = true
   navigate = true
+  light = false
+  side-by-side = true
+  line-numbers = true
   syntax-theme = kanagawa
+  features = decorations
+
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
 
 [diff]
   tool = nvimdiff
   colorMoved = zebra
   colorMovedWS = allow-indentation-change
+  submodule = log
   context = 10
 
 [merge]
   conflictStyle = zdiff3
-  tool = vim_mergetool
+  tool = nvimdiff
 
 [mergetool]
   hideResolved = true
@@ -128,5 +137,3 @@
 [credential]
 	helper = store
 
-[gpg]
-	program = gpg2

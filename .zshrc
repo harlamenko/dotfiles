@@ -20,12 +20,17 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
 fi
-
 # local bin
 LOCAL_BIN_PATH="$HOME/.local/bin"
 if [ -d "$LOCAL_BIN_PATH" ]; then
   export PATH="$LOCAL_BIN_PATH:$PATH"
 fi
+# home bin
+HOME_BIN_PATH="$HOME/bin"
+if [ -d "$HOME_BIN_PATH" ]; then
+  export PATH="$HOME_BIN_PATH:$PATH"
+fi
+export PATH=$PATH:/usr/local/go/bin:/$HOME/go/bin
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit

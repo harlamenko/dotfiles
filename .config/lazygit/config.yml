@@ -10,7 +10,6 @@ gui:
 git:
   pagers:
     - pager: delta --dark --paging=never
-    - useExternalDiffGitConfig: false
   branchLogCmd: "git lf --color=always {{branchName}} --"
   allBranchesLogCmds:
     - git la --color=always

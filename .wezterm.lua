@@ -72,13 +72,13 @@ local function split_nav(resize_or_move, mods, key, dir)
 end
 
 config.keys = {
-	{ key = "|", mods = "ALT|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-	{ key = "-", mods = "ALT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ mods = "ALT|SHIFT", key = "|", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ mods = "ALT", key = "-", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 
-	{ key = "Enter", mods = "ALT", action = act.SpawnTab("CurrentPaneDomain") },
+	{ mods = "ALT", key = "Enter", action = act.SpawnTab("CurrentPaneDomain") },
 
-	{ key = "w", mods = "ALT", action = act.CloseCurrentPane({ confirm = true }) },
-	{ key = "t", mods = "ALT", action = act.CloseCurrentTab({ confirm = true }) },
+	{ mods = "ALT", key = "w", action = act.CloseCurrentPane({ confirm = true }) },
+	{ mods = "ALT", key = "t", action = act.CloseCurrentTab({ confirm = true }) },
 
 	split_nav("resize", "CTRL", "LeftArrow", "Left"),
 	split_nav("resize", "CTRL", "RightArrow", "Right"),
@@ -89,20 +89,20 @@ config.keys = {
 	split_nav("move", "CTRL", "k", "Up"),
 	split_nav("move", "CTRL", "l", "Right"),
 
-	{ key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
+	{ mods = "LEADER", key = "z", action = act.TogglePaneZoomState },
 
-	{ key = "1", mods = "ALT", action = act.ActivateTab(0) },
-	{ key = "2", mods = "ALT", action = act.ActivateTab(1) },
-	{ key = "3", mods = "ALT", action = act.ActivateTab(2) },
-	{ key = "4", mods = "ALT", action = act.ActivateTab(3) },
-	{ key = "5", mods = "ALT", action = act.ActivateTab(4) },
-	{ key = "6", mods = "ALT", action = act.ActivateTab(5) },
-	{ key = "7", mods = "ALT", action = act.ActivateTab(6) },
-	{ key = "8", mods = "ALT", action = act.ActivateTab(7) },
-	{ key = "9", mods = "ALT", action = act.ActivateTab(8) },
+	{ mods = "ALT", key = "1", action = act.ActivateTab(0) },
+	{ mods = "ALT", key = "2", action = act.ActivateTab(1) },
+	{ mods = "ALT", key = "3", action = act.ActivateTab(2) },
+	{ mods = "ALT", key = "4", action = act.ActivateTab(3) },
+	{ mods = "ALT", key = "5", action = act.ActivateTab(4) },
+	{ mods = "ALT", key = "6", action = act.ActivateTab(5) },
+	{ mods = "ALT", key = "7", action = act.ActivateTab(6) },
+	{ mods = "ALT", key = "8", action = act.ActivateTab(7) },
+	{ mods = "ALT", key = "9", action = act.ActivateTab(8) },
 
-	{ key = "/", mods = "ALT", action = act.Search({ CaseSensitiveString = "" }) },
-	{ key = "?", mods = "ALT", action = act.Search({ CaseSensitiveString = "" }) },
+	{ mods = "ALT", key = "/", action = act.Search({ CaseSensitiveString = "" }) },
+	{ mods = "ALT", key = "?", action = act.Search({ CaseSensitiveString = "" }) },
 }
 
 return config

@@ -3,6 +3,7 @@ return {
   opts = {
     options = {
       middle_mouse_command = "bdelete! %d",
+      always_show_bufferline = true,
     },
   },
   -- stylua: ignore

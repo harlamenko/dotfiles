@@ -10,3 +10,4 @@ vim.opt.titlelen = 70
 local project = vim.fn.getcwd():gsub("^.*/", "")
 vim.opt.titlestring = project .. " %-25.55F"
 vim.opt.swapfile = false
+vim.g.clipboard = "xclip"

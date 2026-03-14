@@ -30,7 +30,8 @@ HOME_BIN_PATH="$HOME/bin"
 if [ -d "$HOME_BIN_PATH" ]; then
   export PATH="$HOME_BIN_PATH:$PATH"
 fi
-export PATH=$PATH:/usr/local/go/bin:/$HOME/go/bin
+export PATH="$PATH:/usr/local/go/bin:/$HOME/go/bin"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin/"
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit

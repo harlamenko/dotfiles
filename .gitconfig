@@ -59,12 +59,6 @@
   side-by-side = true
   line-numbers = true
   syntax-theme = kanagawa
-  features = decorations
-
-[delta "decorations"]
-	commit-decoration-style = bold yellow box ul
-	file-style = bold yellow ul
-	file-decoration-style = none
 
 [diff]
   tool = nvimdiff

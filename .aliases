@@ -32,6 +32,3 @@ alias vc='cd $HOME/.config/nvim && vim'
 # Obsidian
 alias oo='cd $HOME/docs/obsidian'
 alias on='function _on(){ v "$HOME/docs/obsidian/$1.md"; }; _on'
-
-# tmux
-alias tf="~/eb.sh"

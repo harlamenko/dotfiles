@@ -78,7 +78,7 @@ config.keys = {
 	{ mods = "ALT", key = "Enter", action = act.SpawnTab("CurrentPaneDomain") },
 
 	{ mods = "ALT", key = "w", action = act.CloseCurrentPane({ confirm = true }) },
-	{ mods = "ALT", key = "t", action = act.CloseCurrentTab({ confirm = true }) },
+	{ mods = "ALT", key = "q", action = act.CloseCurrentTab({ confirm = true }) },
 
 	split_nav("resize", "CTRL", "LeftArrow", "Left"),
 	split_nav("resize", "CTRL", "RightArrow", "Right"),

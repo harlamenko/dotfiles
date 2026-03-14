@@ -1,4 +1,5 @@
 return {
+  { "harlamenko/ng-generate.nvim" },
   {
     "folke/snacks.nvim",
     opts = {

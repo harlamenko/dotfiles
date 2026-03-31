@@ -63,7 +63,12 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 [[ ! -f ~/.dotfiles/.aliases ]] || source ~/.dotfiles/.aliases
 [[ ! -f ~/.dotfiles/.sensitive ]] || source ~/.dotfiles/.sensitive
-[[ ! -f ~/.dotfiles/.p10k.zsh ]] || source ~/.dotfiles/.p10k.zsh
+
+if [[ -n "$CURSOR_AGENT" ]]; then
+  # Skip theme initialization for better compatibility
+else
+  [[ ! -f ~/.dotfiles/.p10k.zsh ]] || source ~/.dotfiles/.p10k.zsh
+fi
 
 autoload -Uz compinit
 compinit

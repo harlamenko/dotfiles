@@ -11,3 +11,5 @@ local project = vim.fn.getcwd():gsub("^.*/", "")
 vim.opt.titlestring = project .. " %-25.55F"
 vim.opt.swapfile = false
 vim.g.clipboard = "xclip"
+vim.opt.spell = true
+vim.opt.spelllang = { "ru", "en" }

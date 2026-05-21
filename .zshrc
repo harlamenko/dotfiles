@@ -76,3 +76,15 @@ compinit
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
+
+# bun completions
+[ -s "/home/hav/.bun/_bun" ] && source "/home/hav/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# java
+export JAVA_HOME="$HOME/javauser/jdk-21.0.2"
+export PATH="$JAVA_HOME/bin:$PATH"
+

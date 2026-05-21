@@ -31,6 +31,24 @@ return {
   { "harlamenko/ng-generate.nvim" },
   {
     "folke/snacks.nvim",
+    init = function()
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "VeryLazy",
+        once = true,
+        callback = function()
+          local Win = require("snacks.win")
+          local orig_win_opts = Win.win_opts
+          Win.win_opts = function(self)
+            local o = orig_win_opts(self)
+            if type(o.height) == "number" then o.height = math.floor(o.height) end
+            if type(o.width) == "number" then o.width = math.floor(o.width) end
+            if type(o.row) == "number" then o.row = math.floor(o.row) end
+            if type(o.col) == "number" then o.col = math.floor(o.col) end
+            return o
+          end
+        end,
+      })
+    end,
     opts = {
       picker = {
         layout = { fullscreen = true },
